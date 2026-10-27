@@ -1,0 +1,10 @@
+{
+  "description": "Browse property listings, explore real estate services, and connect with a realtor to find your next home or sell your property.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
