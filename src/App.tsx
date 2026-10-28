@@ -1,4 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
+import hero2 from './assets/images/hero2.jpeg'
+import ridgeRealty from './assets/images/logos/ridge-realty.png'
+import equalHousing from './assets/images/logos/equal-housing.png'
+import realtorLogo from './assets/images/logos/realtor.jpg'
+import pahrumpChamber from './assets/images/logos/pahrump-chamber.jpg'
+import marciMetzger from './assets/images/marci-metzger.jpg'
+import house1 from './assets/images/house-1.jpeg'
+import house2 from './assets/images/house-2.jpg'
+import house3 from './assets/images/house-3.jpeg'
+import house6 from './assets/images/house-6.jpg'
+import land from './assets/images/land.jpeg'
 
 function useReveal() {
   const ref = useRef<HTMLElement>(null)
@@ -65,12 +76,12 @@ function Icon({ name, size = 20 }: { name: string; size?: number }) {
 }
 
 const properties = [
-  { id: 1, name: 'The Oakwood Residence', location: 'Austin, TX', address: '1248 Oakwood Drive, Austin, TX', price: 875000, beds: 4, baths: 3, area: '2,840', image: 'house-1', type: 'House' },
-  { id: 2, name: 'Palm Springs Retreat', location: 'Palm Springs, CA', address: '86 Desert Vista Lane, Palm Springs, CA', price: 1250000, beds: 4, baths: 4, area: '3,250', image: 'house-2', type: 'Villa' },
-  { id: 3, name: 'The Highland House', location: 'Austin, TX', address: '725 Highland Avenue, Austin, TX', price: 945000, beds: 5, baths: 4, area: '3,120', image: 'house-3', type: 'House' },
-  { id: 4, name: 'Serenity at Westlake', location: 'Austin, TX', address: '210 Westlake Court, Austin, TX', price: 1480000, beds: 5, baths: 4, area: '3,680', image: 'house-4', type: 'Villa' },
-  { id: 5, name: 'The Vista Collection', location: 'Palm Springs, CA', address: '942 Vista Ridge, Palm Springs, CA', price: 1125000, beds: 3, baths: 3, area: '2,650', image: 'house-5', type: 'Villa' },
-  { id: 6, name: 'Garden Grove Estate', location: 'Miami, FL', address: '58 Garden Grove, Miami, FL', price: 795000, beds: 4, baths: 3, area: '2,480', image: 'house-6', type: 'House' },
+  { id: 1, name: 'The Oakwood Residence', location: 'Austin, TX', address: '1248 Oakwood Drive, Austin, TX', price: 875000, beds: 4, baths: 3, area: '2,840', image: house1, type: 'House' },
+  { id: 2, name: 'Palm Springs Retreat', location: 'Palm Springs, CA', address: '86 Desert Vista Lane, Palm Springs, CA', price: 1250000, beds: 4, baths: 4, area: '3,250', image: house2, type: 'Villa' },
+  { id: 3, name: 'The Highland House', location: 'Austin, TX', address: '725 Highland Avenue, Austin, TX', price: 945000, beds: 5, baths: 4, area: '3,120', image: house3, type: 'House' },
+  { id: 4, name: 'Serenity at Westlake', location: 'Austin, TX', address: '210 Westlake Court, Austin, TX', price: 1480000, beds: 5, baths: 4, area: '3,680', image: house1, type: 'Villa' },
+  { id: 5, name: 'The Vista Collection', location: 'Palm Springs, CA', address: '942 Vista Ridge, Palm Springs, CA', price: 1125000, beds: 3, baths: 3, area: '2,650', image: house2, type: 'Villa' },
+  { id: 6, name: 'Garden Grove Estate', location: 'Miami, FL', address: '58 Garden Grove, Miami, FL', price: 795000, beds: 4, baths: 3, area: '2,480', image: house6, type: 'House' },
 ]
 type Property = (typeof properties)[number]
 const money = (n: number) => '$' + n.toLocaleString('en-US')
@@ -144,7 +155,7 @@ const reset = () => {
   return (
     <main>
       <section className="hero" id="home">
-        <img className="hero-image" src="/images/hero2.jpeg" alt="Contemporary white villa with warm interiors and a private swimming pool" />
+        <img className="hero-image" src={hero2} alt="Contemporary white villa with warm interiors and a private swimming pool" />
         <div className="hero-shade" />
         <header className="header">
           <a href="#home" className="brand" aria-label="Marci Metzger Homes">Marci Metzger Homes</a>
@@ -210,16 +221,16 @@ const reset = () => {
 
       <section className="realtor-logos reveal" ref={revealLogos} aria-label="Real estate organizations and community">
         <div className="realtor-logo-row">
-          <img src="/images/logos/ridge-realty.png" alt="The Ridge Realty Group" width={300} height={300} loading="lazy" />
-          <img src="/images/logos/equal-housing.png" alt="Equal Housing Opportunity" width={299} height={300} loading="lazy" />
-          <img src="/images/logos/realtor.jpg" alt="Realtor" width={335} height={300} loading="lazy" />
-          <img src="/images/logos/pahrump-chamber.jpg" alt="Pahrump Valley Chamber of Commerce" width={300} height={300} loading="lazy" />
+          <img src={ridgeRealty} alt="The Ridge Realty Group" width={300} height={300} loading="lazy" />
+          <img src={equalHousing} alt="Equal Housing Opportunity" width={299} height={300} loading="lazy" />
+          <img src={realtorLogo} alt="Realtor" width={335} height={300} loading="lazy" />
+          <img src={pahrumpChamber} alt="Pahrump Valley Chamber of Commerce" width={300} height={300} loading="lazy" />
         </div>
       </section>
 
       <section className="realtor-intro reveal" ref={revealIntro} aria-labelledby="realtor-title">
         <div className="realtor-portrait">
-          <img src="/images/marci-metzger.jpg" alt="Marci Metzger, Realtor with The Ridge Realty Group" width={900} height={1351} loading="lazy" />
+          <img src={marciMetzger} alt="Marci Metzger, Realtor with The Ridge Realty Group" width={900} height={1351} loading="lazy" />
           <span className="realtor-photo-label"><span className="green-dot" /> Your Pahrump Realtor</span>
         </div>
         <div className="realtor-copy">
@@ -240,9 +251,9 @@ const reset = () => {
       <section className="section about reveal" id="about" ref={revealAbout}>
         <div className="section-heading"><div><span className="overline">GET IT SOLD</span><h2>Don’t just list it.<br />Get it sold.</h2><p>We helped nearly 90 clients in 2021 and closed $28.5 million in sales.<br />Our clients deserve our best—and we work to make our best better every year.</p></div><div className="about-caption"><div className="mini-homes"><Icon name="home" size={24} /></div><p>Marci Metzger<br />The Ridge Realty Group<br />Your Pahrump real estate team.</p></div></div>
         <div className="about-grid">
-          <div className="about-photo"><img src="/images/house-1.jpeg" alt="Illustrative modern residential home surrounded by greenery" loading="lazy" /><span className="image-label"><span className="green-dot" /> Nearly 90 clients helped in 2021.</span></div>
+          <div className="about-photo"><img src={house1} alt="Illustrative modern residential home surrounded by greenery" loading="lazy" /><span className="image-label"><span className="green-dot" /> Nearly 90 clients helped in 2021.</span></div>
           <div className="philosophy"><span className="section-number">01 / FOR SELLERS</span><h3>Don’t just list it.<br />Get it SOLD!</h3><p>We exhaust every avenue to ensure our listings are at the fingertips of every possible buyer, getting you top dollar for your home.</p><a className="text-link" href="tel:+12069196886">Let’s sell your home <Icon name="arrow" size={17} /></a></div>
-          <div className="featured-small"><img src="/images/house-3.jpeg" alt="Illustrative contemporary home with spacious balconies" loading="lazy" /><div><span className="overline">GUIDE TO BUYERS</span><p>Nobody knows the market like we do. Enjoy having a pro at your service. Market analysis, upgrades lists, contractors on speed dial, and more!</p><a className="button dark small" href="tel:+12069196886">Talk to Marci <Icon name="diagonal" size={13} /></a></div></div>
+          <div className="featured-small"><img src={house3} alt="Illustrative contemporary home with spacious balconies" loading="lazy" /><div><span className="overline">GUIDE TO BUYERS</span><p>Nobody knows the market like we do. Enjoy having a pro at your service. Market analysis, upgrades lists, contractors on speed dial, and more!</p><a className="button dark small" href="tel:+12069196886">Talk to Marci <Icon name="diagonal" size={13} /></a></div></div>
         </div>
         <div className="stats"><StatItem value={90} prefix="~" suffix="" label="Clients helped in 2021" /><StatItem value={28.5} prefix="$" suffix="M" label="Sales closed in 2021" /><StatItem value={30} prefix="~" suffix="" label="Years as a Realtor" /><StatItem value={100} prefix="" suffix="%" label="Pahrump market expertise" /></div>
       </section>
@@ -267,7 +278,7 @@ const reset = () => {
       <section className="section properties reveal" id="properties" ref={revealProperties}>
         <PropertyGallery />
         {searched && <div className="results-bar"><span>{visible.length} {visible.length === 1 ? 'home' : 'homes'} found{filters.location ? ` in ${filters.location}` : ''}</span><button onClick={reset}>Clear filters <Icon name="close" size={14} /></button></div>}
-        {searched && <div className="gallery-search-results">{visible.map(p => <button key={p.id} onClick={() => setSelected(p)}><img src={`/images/${p.image}.jpg`} alt={p.name} loading="lazy" /><span>{p.name}<small>{p.location} · {money(p.price)}</small></span><Icon name="diagonal" size={17} /></button>)}</div>}
+        {searched && <div className="gallery-search-results">{visible.map(p => <button key={p.id} onClick={() => setSelected(p)}><img src={p.image} alt={p.name} loading="lazy" /><span>{p.name}<small>{p.location} · {money(p.price)}</small></span><Icon name="diagonal" size={17} /></button>)}</div>}
         {searched && !visible.length && <div className="empty-state"><Icon name="search" size={35} /><h3>Your perfect match is still out there.</h3><p>Try a different location or price range to see more homes.</p><button className="button dark" onClick={reset}>Explore all homes <Icon name="arrow" size={16} /></button></div>}
       </section>
 
@@ -275,7 +286,7 @@ const reset = () => {
 
       <section className="section faq reveal" id="faq" ref={revealFaq}>
         <div className="section-heading"><div><span className="overline">A LITTLE CLARITY GOES A LONG WAY</span><h2>Good questions.<br />Honest answers.</h2></div><p>Big decisions come with questions. We’re here to<br className="desktop-break" /> make every step feel a little more simple,<br className="desktop-break" /> and a lot more human.</p></div>
-        <div className="faq-list">{questions.map(([q, a], i) => <div className={`faq-item ${openFaq === i ? 'is-open' : ''}`} key={q}><button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} aria-controls={`answer-${i}`}><span>{q}</span><span className="faq-toggle">{openFaq === i ? '−' : '+'}</span></button><div className="faq-answer" id={`answer-${i}`} aria-hidden={openFaq !== i}><div className="faq-answer-inner"><p>{a}</p><img src="/images/hero2.jpeg" alt="A home designed for a fresh start" loading="lazy" /></div></div></div>)}</div>
+        <div className="faq-list">{questions.map(([q, a], i) => <div className={`faq-item ${openFaq === i ? 'is-open' : ''}`} key={q}><button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} aria-controls={`answer-${i}`}><span>{q}</span><span className="faq-toggle">{openFaq === i ? '−' : '+'}</span></button><div className="faq-answer" id={`answer-${i}`} aria-hidden={openFaq !== i}><div className="faq-answer-inner"><p>{a}</p><img src={hero2} alt="A home designed for a fresh start" loading="lazy" /></div></div></div>)}</div>
       </section>
 
       <section className="section testimonials reveal" id="testimonials" ref={revealTestimonials}>
@@ -284,11 +295,11 @@ const reset = () => {
         <div className="slider-dots">{reviews.map((_, i) => <button key={i} aria-label={`Show testimonial ${i + 1}`} className={review === i ? 'current' : ''} onClick={() => setReview(i)} />)}</div>
       </section>
 
-      <section className="cta reveal" ref={revealCta}><img src="/images/land.jpeg" alt="An exceptional contemporary home with an inviting pool" loading="lazy" /><div className="cta-shade" /><div className="cta-content"><span className="overline">YOUR NEXT CHAPTER STARTS HERE</span><h2>Let’s make your dream<br />home a reality.</h2><p>A little guidance. A world of possibilities.</p><button className="button lime" onClick={openContact}>Let’s find your home <Icon name="diagonal" size={16} /></button></div></section>
+      <section className="cta reveal" ref={revealCta}><img src={land} alt="An exceptional contemporary home with an inviting pool" loading="lazy" /><div className="cta-shade" /><div className="cta-content"><span className="overline">YOUR NEXT CHAPTER STARTS HERE</span><h2>Let’s make your dream<br />home a reality.</h2><p>A little guidance. A world of possibilities.</p><button className="button lime" onClick={openContact}>Let’s find your home <Icon name="diagonal" size={16} /></button></div></section>
       <ContactSection />
       <footer className="footer reveal" ref={revealFooter}><FooterSocials /><div className="footer-nav"><div><a href="#home">Home</a><a href="#properties">Listings</a><a href="#about">About</a><a href="#testimonials">Testimonials</a></div><a href="#home" className="brand dark-brand">Marci Metzger Homes</a><div><a href="#faq">FAQs</a><button onClick={openContact}>Contact</button></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Evergreen Real Estate. All rights reserved.</span><span>Thoughtfully connected. Naturally home.</span></div></footer>
 
-      {(selected || contact) && <div className="modal-backdrop" onClick={() => { setSelected(null); setContact(false) }}><section className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onClick={e => e.stopPropagation()}><button className="modal-close icon-button" aria-label="Close dialog" onClick={() => { setSelected(null); setContact(false) }}><Icon name="close" /></button>{selected ? <><img className="modal-photo" src={`/images/${selected.image}.jpg`} alt={selected.name} /><div className="modal-content"><span className="overline">A PLACE TO CALL YOUR OWN</span><h2 id="modal-title">{selected.name}</h2><p className="modal-address"><Icon name="pin" size={16} />{selected.address}</p><strong className="modal-price">{money(selected.price)}</strong><div className="modal-features"><span><Icon name="bed" />{selected.beds} bedrooms</span><span><Icon name="bath" />{selected.baths} bathrooms</span><span><Icon name="area" />{selected.area} sqft</span></div><p>Thoughtfully designed for effortless everyday living. Discover beautiful light-filled spaces, refined finishes, and room for all the moments that matter.</p><button className="button dark" onClick={openContact}>Request a private tour <Icon name="arrow" size={17} /></button></div></> : <div className="modal-content contact-content">{sent ? <div className="sent-state"><span className="success-icon"><Icon name="check" size={30} /></span><h2 id="modal-title">Your next chapter is calling.</h2><p>Your inquiry is ready. To speak with our team directly, call us or send an email below.</p><a className="button dark" href="mailto:hello@evergreen.example">Open your email <Icon name="arrow" size={17} /></a><a href="tel:+15125550148">+1 (512) 555-0148</a></div> : <><span className="overline">GOOD BEGINNINGS START WITH HELLO</span><h2 id="modal-title">Let’s find your place.</h2><p>Tell us a little about what you’re looking for.</p><form onSubmit={e => { e.preventDefault(); setSent(true) }}><label>Your name<input name="name" placeholder="Full name" required autoComplete="name" /></label><label>Email address<input name="email" type="email" placeholder="you@example.com" required autoComplete="email" /></label><label>What does your next chapter look like?<textarea name="message" placeholder="Your ideal location, home, and timing…" rows={3} required /></label><p className="form-note">This is a preview inquiry form. No information is stored or sent.</p><button className="button dark" type="submit">Start the conversation <Icon name="arrow" size={17} /></button></form></>}</div>}</section></div>}
+      {(selected || contact) && <div className="modal-backdrop" onClick={() => { setSelected(null); setContact(false) }}><section className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onClick={e => e.stopPropagation()}><button className="modal-close icon-button" aria-label="Close dialog" onClick={() => { setSelected(null); setContact(false) }}><Icon name="close" /></button>{selected ? <><img className="modal-photo" src={selected.image} alt={selected.name} loading="lazy" /><div className="modal-content"><span className="overline">A PLACE TO CALL YOUR OWN</span><h2 id="modal-title">{selected.name}</h2><p className="modal-address"><Icon name="pin" size={16} />{selected.address}</p><strong className="modal-price">{money(selected.price)}</strong><div className="modal-features"><span><Icon name="bed" />{selected.beds} bedrooms</span><span><Icon name="bath" />{selected.baths} bathrooms</span><span><Icon name="area" />{selected.area} sqft</span></div><p>Thoughtfully designed for effortless everyday living. Discover beautiful light-filled spaces, refined finishes, and room for all the moments that matter.</p><button className="button dark" onClick={openContact}>Request a private tour <Icon name="arrow" size={17} /></button></div></> : <div className="modal-content contact-content">{sent ? <div className="sent-state"><span className="success-icon"><Icon name="check" size={30} /></span><h2 id="modal-title">Your next chapter is calling.</h2><p>Your inquiry is ready. To speak with our team directly, call us or send an email below.</p><a className="button dark" href="mailto:hello@evergreen.example">Open your email <Icon name="arrow" size={17} /></a><a href="tel:+15125550148">+1 (512) 555-0148</a></div> : <><span className="overline">GOOD BEGINNINGS START WITH HELLO</span><h2 id="modal-title">Let’s find your place.</h2><p>Tell us a little about what you’re looking for.</p><form onSubmit={e => { e.preventDefault(); setSent(true) }}><label>Your name<input name="name" placeholder="Full name" required autoComplete="name" /></label><label>Email address<input name="email" type="email" placeholder="you@example.com" required autoComplete="email" /></label><label>What does your next chapter look like?<textarea name="message" placeholder="Your ideal location, home, and timing…" rows={3} required /></label><p className="form-note">This is a preview inquiry form. No information is stored or sent.</p><button className="button dark" type="submit">Start the conversation <Icon name="arrow" size={17} /></button></form></>}</div>}</section></div>}
     </main>
   )
 }

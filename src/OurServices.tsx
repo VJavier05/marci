@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
+import s1 from './assets/images/s1.jpeg'
+import house6 from './assets/images/house-6.jpg'
+import s3 from './assets/images/s3.jpeg'
 
 const services = [
   {
@@ -6,7 +9,7 @@ const services = [
     label: 'YOUR NEXT CHAPTER',
     copy: 'Nervous about your property adventure? Don’t be. Whether you’re getting ready to buy or sell your residence, looking at investment properties, or just curious about the markets, our team ensures you get the best experience possible.',
     tags: ['Buying', 'Selling', 'Investing'],
-    image: '/images/s1.jpeg',
+    image: s1,
     alt: 'Contemporary residential architecture surrounded by greenery',
     action: 'Let’s talk about your next move',
   },
@@ -15,7 +18,7 @@ const services = [
     label: 'POSSIBILITIES, BIG & SMALL',
     copy: 'Large or small, condo or mansion, we can find it and get it at the price that’s right. Fixer-uppers? Luxury? We can help with all of it. We live, work, and play in this community—and we’re happy to help you find where to put your hard-earned dollars.',
     tags: ['Homes', 'Commercial', 'Investment properties'],
-    image: '/images/house-6.jpg',
+    image: house6,
     alt: 'Modern white residence with a swimming pool',
     action: 'Find the right opportunity',
   },
@@ -24,7 +27,7 @@ const services = [
     label: 'CLARITY AT EVERY STEP',
     copy: 'If you have questions about affordability, credit, and loan options, trust us to connect you with the right people to get the answers you need in a timely fashion. We make sure you feel confident and educated every step of the way.',
     tags: ['Affordability', 'Credit', 'Loan options'],
-    image: '/images/s3.jpeg',
+    image: s3,
     alt: 'Open desert landscape with mountains along the horizon',
     action: 'Get the guidance you need',
   },

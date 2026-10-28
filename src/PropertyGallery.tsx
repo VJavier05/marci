@@ -1,11 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
+import gallery1 from './assets/images/gallery/1.jpeg'
+import gallery2 from './assets/images/gallery/2.jpeg'
+import gallery3 from './assets/images/gallery/3.jpeg'
+import gallery4 from './assets/images/gallery/4.jpeg'
+import gallery5 from './assets/images/gallery/5.jpeg'
 
 const photos = [
-  { src: '/images/gallery/1.jpeg', title: '', space: '', alt: 'The Oakwood Residence' },
-  { src: '/images/gallery/2.jpeg', title: '', space: '', alt: 'Palm Springs Retreat' },
-  { src: '/images/gallery/3.jpeg', title: '', space: '', alt: 'The Highland House' },
-  { src: '/images/gallery/4.jpeg', title: '', space: '', alt: 'Serenity at Westlake' },
-  { src: '/images/gallery/5.jpeg', title: '', space: '', alt: 'The Vista Collection' },
+  { src: gallery1, title: '', space: '', alt: 'The Oakwood Residence' },
+  { src: gallery2, title: '', space: '', alt: 'Palm Springs Retreat' },
+  { src: gallery3, title: '', space: '', alt: 'The Highland House' },
+  { src: gallery4, title: '', space: '', alt: 'Serenity at Westlake' },
+  { src: gallery5, title: '', space: '', alt: 'The Vista Collection' },
 ]
 
 function GalleryIcon({ type }: { type: 'expand' | 'grid' | 'next' | 'previous' | 'close' }) {
@@ -75,9 +80,9 @@ export default function PropertyGallery() {
     {current && <dialog ref={dialog} className="gallery-lightbox" aria-labelledby="gallery-lightbox-title" onClose={() => setActive(null)} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close() }} onKeyDown={e => { if (e.key === 'ArrowRight') { e.preventDefault(); move(1) } if (e.key === 'ArrowLeft') { e.preventDefault(); move(-1) } }}>
       <div className="gallery-lightbox-shell">
         <header className="gallery-lightbox-header"><div><span className="overline">FEATURED PROPERTIES</span><h3 id="gallery-lightbox-title">{current.title}</h3></div><div><span aria-live="polite">{String(active! + 1).padStart(2, '0')} / {String(photos.length).padStart(2, '0')}</span><button className="icon-button" aria-label="Close photo viewer" onClick={() => dialog.current?.close()} autoFocus><GalleryIcon type="close" /></button></div></header>
-        <div className="gallery-lightbox-stage"><button className="icon-button gallery-previous" aria-label="Previous photo" onClick={() => move(-1)}><GalleryIcon type="previous" /></button><img src={current.src} alt={current.alt} /><button className="icon-button gallery-next" aria-label="Next photo" onClick={() => move(1)}><GalleryIcon type="next" /></button></div>
+        <div className="gallery-lightbox-stage"><button className="icon-button gallery-previous" aria-label="Previous photo" onClick={() => move(-1)}><GalleryIcon type="previous" /></button><img src={current.src} alt={current.alt} loading="lazy" /><button className="icon-button gallery-next" aria-label="Next photo" onClick={() => move(1)}><GalleryIcon type="next" /></button></div>
         <div className="gallery-lightbox-footer"><span>{current.space}</span><span>Use ← → to explore · Esc to close</span></div>
-        <div className="gallery-thumbnails" aria-label="Choose a photo">{photos.map((photo, i) => <button key={photo.src} className={active === i ? 'is-active' : ''} aria-label={`Show ${photo.title}`} aria-pressed={active === i} onClick={() => setActive(i)}><img src={photo.src} alt="" /></button>)}</div>
+        <div className="gallery-thumbnails" aria-label="Choose a photo">{photos.map((photo, i) => <button key={photo.src} className={active === i ? 'is-active' : ''} aria-label={`Show ${photo.title}`} aria-pressed={active === i} onClick={() => setActive(i)}><img src={photo.src} alt="" loading="lazy" /></button>)}</div>
       </div>
     </dialog>}
   </>
